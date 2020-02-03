@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SendMail /> renders correctly 1`] = `
+<SendEmail
+  classes={
+    Object {
+      "buttons": "SendEmail-buttons-3",
+      "container": "SendEmail-container-2",
+      "recipient": "SendEmail-recipient-4",
+      "root": "SendEmail-root-1",
+    }
+  }
+/>
+`;

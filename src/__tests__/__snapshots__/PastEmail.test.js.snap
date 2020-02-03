@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PastEmail /> renders correctly 1`] = `
+<PastEmail
+  classes={
+    Object {
+      "bullet": "PastEmail-bullet-3",
+      "card": "PastEmail-card-2",
+      "pos": "PastEmail-pos-5",
+      "root": "PastEmail-root-1",
+      "title": "PastEmail-title-4",
+    }
+  }
+/>
+`;

@@ -19,7 +19,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import HomeIcon from '@material-ui/icons/Home';
+import HistoryIcon from '@material-ui/icons/History';
 import SendIcon from '@material-ui/icons/Send';
 
 const drawerWidth = 240;
@@ -138,11 +138,11 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
             <ListItemLink button href="/">
-              <ListItemIcon><HomeIcon /></ListItemIcon>
+              <ListItemIcon><SendIcon /></ListItemIcon>
               <ListItemText primary={'Send Emails'}/>
             </ListItemLink>
             <ListItemLink button href="/past">
-              <ListItemIcon><SendIcon /></ListItemIcon>
+              <ListItemIcon><HistoryIcon /></ListItemIcon>
               <ListItemText primary={'Past Emails'} />
             </ListItemLink>
         </List>

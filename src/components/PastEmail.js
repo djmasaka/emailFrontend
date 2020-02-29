@@ -21,9 +21,6 @@ const style = theme => ({
       margin: '0 2px',
       transform: 'scale(0.8)',
     },
-    title: {
-      fontSize: 14,
-    },
     pos: {
       marginBottom: 12,
     },
@@ -61,15 +58,13 @@ class PastEmail extends React.Component {
                 {this.state.pastEmails.map(email => (
                     <Card className={classes.card}>
                     <CardContent>
-                        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        <Typography className={classes.title} variant="subtitle1" color="primary">
                         to: {email.recipients}
                         </Typography>
-                        <Typography className={classes.pos} color="textSecondary">
-                        from: {email.sender}
-                        </Typography>
-                        <Typography variant="body2" component="p">
+                        <Typography variant="subtitle1" >
                         subject: {email.subject}
-                        <br />
+                        </Typography>
+                        <Typography variant="subtitle1" >
                         text: {email.text}
                         </Typography>
                     </CardContent>

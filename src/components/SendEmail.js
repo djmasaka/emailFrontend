@@ -38,7 +38,6 @@ class SendEmail extends React.Component {
         super(props)
         this.state = {
             recipients: [''],
-            sender: '',
             subject: '',
             text: '',
             emptyField: ''
@@ -88,9 +87,6 @@ class SendEmail extends React.Component {
         }else if(this.state.subject === ''){
             this.setState({emptyField: 'subject'})
             return false
-        }else if(this.state.sender === ''){
-            this.setState({emptyField: 'sender'})
-            return false
         }else if(this.checkRecipient() === false){
             this.setState({emptyField: 'recipient'})
             return false
@@ -116,20 +112,18 @@ class SendEmail extends React.Component {
             this.setState({emptyField: ''})
             const msg = {
                 recipient: this.state.recipients,
-                sender: this.state.sender,
                 subject: this.state.subject,
                 text: this.state.text
             }
             const msgForFirebase = {
                 recipients: msg.recipient.join(','),
-                sender: msg.sender,
                 subject: msg.subject,
                 text: msg.text
             }
             //this to write to the firestore database
-            //this.props.db.collection('pastEmails').doc().set(msgForFirebase)
+            this.props.db.collection('pastEmails').doc().set(msgForFirebase)
             console.log(msg)
-            fetch("http://localhost:3001/", {
+            fetch("http://167.172.159.113:3001/api", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json'
@@ -186,17 +180,6 @@ class SendEmail extends React.Component {
             >
                 <RemoveIcon />
             </Fab>
-            </Grid>
-            <Grid item md={6}>
-            <TextField 
-                id="sender" 
-                label="Sender (username)" 
-                name="sender" 
-                variant="outlined" 
-                value={this.state.sender} 
-                onChange={this.changeText}
-                style ={{width: '90%'}}
-            />
             </Grid>
             <Grid item md={6}>
             <TextField 

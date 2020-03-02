@@ -123,7 +123,7 @@ class SendEmail extends React.Component {
             //this to write to the firestore database
             this.props.db.collection('pastEmails').doc().set(msgForFirebase)
             console.log(msg)
-            fetch("http://167.172.159.113:3001/api", {
+            fetch("https://us-central1-emailbackend-f430f.cloudfunctions.net/widgets", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json'
